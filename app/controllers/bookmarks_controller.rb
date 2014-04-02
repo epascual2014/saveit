@@ -13,4 +13,17 @@ class BookmarksController < ApplicationController
     @bookmark.save
     redirect_to bookmarks_path
   end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def show
+    @bookmark = Bookmark.find(params[:id])
+  end
+
+  def destroy
+  end
 end
