@@ -1,1 +1,3 @@
 <%= link_to @bookmark.url, @bookmark.url %> 
+<p><%= button_to 'Edit Bookmark', edit_bookmark_path(@bookmark) %></p>
+<%= button_to 'Remove Bookmark', @bookmark, method: :delete %>

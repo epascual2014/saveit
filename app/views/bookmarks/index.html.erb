@@ -1,4 +1,14 @@
-<% @bookmarks.each do |bookmark| %>
-  <p><%= link_to bookmark.url, "/bookmarks/#{bookmark.id}" %></p>
-<% end %>
-<%= link_to 'Submit new bookmark', bookmarks_new_path %>
+<h1>Welcome to Save it</h1>
+
+<div class="row">
+  <% @bookmarks.each do |bookmark| %>
+    <p>
+      <%#= link_to bookmark.url, "/bookmarks/#{bookmark.id}" %>
+      <%#= link_to bookmark.url, bookmark_path(bookmark.id) %>
+      <%#= link_to bookmark.url, bookmark_path(bookmark) %>
+      <%= link_to bookmark.url, bookmark %>
+    </p>
+  <% end %>
+</div>
+
+<h3><%= button_to 'Submit new bookmark', new_bookmark_path %></h3>

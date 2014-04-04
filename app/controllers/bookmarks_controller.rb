@@ -8,16 +8,18 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    @bookmark = Bookmark.new
-    @bookmark.url = params[:bookmark][:url]
-    @bookmark.save
+    @bookmark = Bookmark.create(params[:bookmark])
     redirect_to bookmarks_path
   end
 
   def edit
+    @bookmark = Bookmark.find(params[:id])
   end
 
   def update
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.update_attributes(params[:bookmark])
+    redirect_to bookmarks_path 
   end
 
   def show
@@ -25,5 +27,8 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy
+    redirect_to bookmarks_path
   end
 end
