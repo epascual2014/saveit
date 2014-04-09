@@ -8,7 +8,9 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    @bookmark = Bookmark.create(params[:bookmark])
+    @bookmark = Bookmark.new(params[:bookmark])
+    @bookmark.user = current_user 
+    @bookmark.save
     redirect_to bookmarks_path
   end
 

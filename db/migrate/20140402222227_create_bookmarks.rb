@@ -4,5 +4,8 @@ class CreateBookmarks < ActiveRecord::Migration
       t.string :url 
       t.timestamps
     end
+
+    # create_table :bookmarks
+    # add_column :bookmarks, :url, :string
   end
 end
