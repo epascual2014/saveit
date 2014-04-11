@@ -1,3 +1,5 @@
-<%= link_to @bookmark.url, @bookmark.url %> 
+<%= link_to @bookmark.url, @bookmark.url %>
+by:
+<%= render @bookmark.user %> 
 <p><%= button_to 'Edit Bookmark', edit_bookmark_path(@bookmark), method: :get %></p>
 <%= button_to 'Remove Bookmark', @bookmark, method: :delete %>
